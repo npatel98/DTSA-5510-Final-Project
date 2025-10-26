@@ -1,0 +1,6 @@
+venv/
+.claude
+CLAUDE.md
+docs/
+*.pptx
+scripts/
