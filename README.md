@@ -18,10 +18,10 @@ This project uses **Gaussian Mixture Models (GMM)** to discover modern NBA playe
 
 ### Deliverables
 
-✅ **Jupyter Notebook:** Complete analysis with 77 cells (28 markdown, 49 code)
-✅ **PowerPoint Presentation:** 22 slides with detailed speaker notes
-✅ **Visualizations:** 13 high-quality figures (300 DPI)
-✅ **Data Export:** CSV with player cluster assignments
+- **Jupyter Notebook:** Complete analysis with 77 cells (28 markdown, 49 code)
+- \*PowerPoint Presentation:\*\* 22 slides with detailed speaker notes
+- **Visualizations:** 13 high-quality figures (300 DPI)
+- **Data Export:** CSV with player cluster assignments
 
 ## Quick Start
 
@@ -188,7 +188,7 @@ If you encounter memory errors:
 After running the notebook, you'll get:
 
 - **player_cluster_assignments.csv** - Complete clustering results with player statistics and archetype assignments
-- **figures/*.png** - 13 high-quality visualizations (300 DPI) for analysis and presentation
+- **figures/\*.png** - 13 high-quality visualizations (300 DPI) for analysis and presentation
 
 ### Generated Figures
 
@@ -221,12 +221,15 @@ You can modify these parameters in the notebook:
 ### Feature Engineering (13 Features)
 
 **Core Per-36 Statistics (4):**
+
 - PTS_36, AST_36, REB_36, STL_36
 
 **Shooting Efficiency/Style (2):**
+
 - FG_PCT, THREE_PT_RATE
 
 **Role-Specific Discriminators (7):**
+
 - PURE_PLAYMAKER, FT_RATE, PAINT_PROTECTOR, BLK_36
 - GUARD_INDEX, BIG_INDEX, DEFENSIVE_VERSATILITY
 
@@ -235,12 +238,14 @@ You can modify these parameters in the notebook:
 ### Algorithm Selection
 
 **Algorithms Tested:**
+
 1. K-Means (suggested k=2, insufficient)
 2. Hierarchical Clustering (better metrics but hard boundaries)
 3. **Gaussian Mixture Models (SELECTED)** - k=5
 4. DBSCAN
 
 **Why GMM?**
+
 - Soft clustering with probabilistic membership
 - Better handles overlapping roles (modern "positionless basketball")
 - Domain validity prioritized over metric optimization
@@ -249,18 +254,22 @@ You can modify these parameters in the notebook:
 ### The 5 Archetypes
 
 1. **Elite Perimeter Playmaking Scorers** (68 players, 16.5%)
+
    - 22.3 PTS, 5.8 AST per 36, 41% 3PT rate, 45.8% FG
    - Franchise cornerstones, primary offensive creators
 
 2. **Role-Playing Three-Point Facilitating Shooters** (91 players, 22.1%)
+
    - 14.9 PTS, 3.1 AST per 36, 54% 3PT rate (ELITE)
    - Floor spacers, catch-and-shoot threats
 
 3. **Offensive Mid-Range Centers** (106 players, 25.8% - LARGEST)
+
    - 15.3 PTS at 53.6% FG, 10.5 REB, 1.5 BLK per 36
    - Traditional bigs, paint anchors, rim protectors
 
 4. **Role-Playing Three-Point Forward Shooters** (89 players, 21.7%)
+
    - 14.6 PTS, 2.6 AST per 36, 48% 3PT rate (HIGHEST)
    - Stretch forwards, floor spacing bigs
 
@@ -302,6 +311,7 @@ The project includes a comprehensive **22-slide PowerPoint presentation**:
 **File:** `NBA_Player_Clustering_Presentation.pptx`
 
 **Contents:**
+
 - Problem statement and motivation
 - Methodology overview and feature engineering
 - EDA with correlation heatmap
@@ -318,15 +328,18 @@ The project includes a comprehensive **22-slide PowerPoint presentation**:
 ## Limitations
 
 **Data Limitations:**
+
 - Box score statistics incomplete (missing tracking data, advanced metrics)
 - Defensive impact underrepresented (STL/BLK miss elite on-ball defense)
 - Off-ball contributions not captured (screening, gravity)
 
 **Temporal Limitations:**
+
 - Single season snapshot (2024-25)
 - Player performance varies year-to-year
 
 **Methodological Constraints:**
+
 - Predetermined k=5 (domain constraint overrides data optimization at k=2)
 - Outlier sensitivity (generational talents may distort centroids)
 - Steals are incomplete defensive measure
@@ -376,12 +389,3 @@ For issues with:
 ---
 
 **Note:** Make sure you're using the virtual environment (`venv`) to ensure all dependencies are correctly loaded.
-
-## Citation
-
-If using this work, please cite:
-
-```
-Patel, N. (2025). Discovering Modern NBA Player Archetypes Through Unsupervised Learning.
-DTSA 5510 - Unsupervised Algorithms in Machine Learning, University of Colorado Boulder.
-```
